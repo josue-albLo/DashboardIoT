@@ -1,0 +1,87 @@
+/* Estilos para el dashboard y las data cards */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.data-card {
+    width: 48%; /* Adjust the width of each data-card */
+    padding: 20px;
+    margin-bottom: 20px; /* Add margin to create space between the cards */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #085b57;
+    box-sizing: border-box;
+}
+
+.data-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: azure;
+}
+
+.data-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: azure;
+}
+
+.data-card span {
+    font-weight: bold;
+    color: #FF6384;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .data-card {
+        width: 100%; /* Adjust the width for smaller screens */
+        max-width: 100%; /* Adjust the maximum width for smaller screens */
+    }
+}
+
+/* Styles for the data card description */
+.data-card-description {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: ghostwhite;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.data-card-description h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.data-card-description p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.data-card-description span {
+    font-weight: bold;
+    color: #FF6384;
+}
+
+.data-card-description h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .data-card-description {
+        width: 100%; /* Adjust the width for smaller screens */
+    }
+}
+
+#root{
+    border-radius: 10px;
+    background-color: rgba(37, 207, 173, 0.6);
+}

@@ -1,0 +1,30 @@
+/* Estilos usando CSS modules para los componentes de gráficos */
+.chart-container {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 800px; /* Set a maximum width */
+    height: 400px; /* Set the desired height */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f7;
+    margin: 0 auto;
+    margin-top: 25px;
+    box-sizing: border-box;
+}
+
+.chart-container canvas {
+    border-radius: 10px;
+    width: 100%; /* Ensure the canvas takes up full width */
+    height: 100%; /* Ensure the canvas takes up full height */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .chart-container {
+        max-width: 100%; /* Adjust the maximum width for smaller screens */
+        height: 300px; /* Adjust the height for smaller screens */
+    }
+}
