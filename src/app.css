@@ -9,6 +9,15 @@
     box-sizing: border-box;
 }
 
+.data-card-table{
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #085b57;
+    box-sizing: border-box;
+}
 .data-card {
     width: 48%; /* Adjust the width of each data-card */
     padding: 20px;
@@ -46,6 +55,7 @@
 
 /* Styles for the data card description */
 .data-card-description {
+    width: auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);

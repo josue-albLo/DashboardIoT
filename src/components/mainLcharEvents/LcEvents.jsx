@@ -38,7 +38,7 @@ const LcEvents = () => {
                 const eventsByDate = response.reduce((acc, item) => {
                     const date = item.fechaCreacion.split('T')[0];
                     if (!acc[date]) {
-                        acc[date] = { dateCreated: date, Abrir: 0, Cerrar: 0}
+                        acc[date] = { dateCreated: date, Abrir: 0, Cerrar: 0 }
                     }
 
                     if (item.evento1 === 'Abrir') {
@@ -48,67 +48,66 @@ const LcEvents = () => {
                     }
                     return acc;
                 })
-                
-                const filterData = Object.values(eventsByDate)[5];
-                setData(filterData);
-                console.log(`filterData`, filterData);
-                
-            }).catch(err => console.log(err))
+
+                const datos = Object.values(eventsByDate).slice(-7)
+
+                // Ordenar el array en función de la propiedad "dateCreated" en orden descendente
+                datos.sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated));
+                datos.reverse();
+                setData(datos);
+            })
+            .catch(err => console.log(err))
     }, [])
 
-    const ficData = [
-        {
-            "dateCreated": "2023-10-14",
-            "Abrir": 7,
-            "Cerrar": 5
-        },
-        {
-            "dateCreated": "2023-10-13",
-            "Abrir": 6,
-            "Cerrar": 2
-        },
-        {
-            "dateCreated": "2023-10-12",
-            "Abrir": 7,
-            "Cerrar": 8
-        },
-        {
-            "dateCreated": "2023-10-11",
-            "Abrir": 22,
-            "Cerrar": 10
-        }
-    ]
+
+
     const dataFetch = {
-        labels: ficData.map(item => item.dateCreated),
+        labels: data.map(item => item.dateCreated),
         datasets: [
             {
                 label: 'Abrir',
-                data: ficData.map(item => item.Abrir),
+                data: data.map(item => item.Abrir),
                 tension: 0.4,
                 fill: true,
-                backgroundColor: 'rgba(0,0,255, 0.2)',
-                borderColor: 'rgba(0,0,255)'
+                backgroundColor: 'rgba(0, 0, 255, 0.2)', // Color azul con opacidad
+                borderColor: 'rgba(0, 0, 255, 0.8)', // Color azul más oscuro
             },
             {
                 label: 'Cerrar',
-                data: ficData.map(item => item.Cerrar),
+                data: data.map(item => item.Cerrar),
                 tension: 0.4,
                 fill: true,
-                backgroundColor: 'rgba(255,255,0, 0.2)',
-                borderColor: 'rgba(255,255,0)'
+                backgroundColor: 'rgba(255, 255, 0, 0.2)', // Color amarillo con opacidad
+                borderColor: 'rgba(255, 255, 0, 0.8)', // Color amarillo más oscuro
             }
         ]
-    }
+    };
+
 
     const optionsFetch = {
         responsive: true,
         animation: true,
-        plugins:{
-            legend:{
-                display:true,
+        plugins: {
+            legend: {
+                display: true,
             }
-        }
-    }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Eventos (Abrir, Cerrar)', // Nombre del eje X
+                },
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Fechas', // Nombre del eje Y
+                },
+            },
+        },
+    };
+
 
     return (
         <div className="chart-container">

@@ -1,7 +1,7 @@
 /* Estilos para la tabla */
 .cardTable {
     margin: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -9,26 +9,28 @@
 .event-table {
     width: 100%;
     border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
 }
 
 .event-table th,
 .event-table td {
-    padding: 16px;
+    padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #ddd;
 }
 
 .event-table th {
-    background-color: #3498db;
+    background-color: #085b57;
     color: white;
 }
 
 .event-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
 }
 
 .event-table tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #e2e2e2;
 }
 
 .event-table td {
@@ -37,9 +39,8 @@
 
 /* Estilos para hacer la tabla responsive */
 @media (max-width: 767px) {
-
     .event-table th,
     .event-table td {
-        padding: 10px;
+        padding: 8px;
     }
 }

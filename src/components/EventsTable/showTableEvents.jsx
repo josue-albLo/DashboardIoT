@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {get_data} from "../../api/getData";
+import {getDataSeverTwo} from "../../api/getData";
 import {EventTable} from "./tableEvents.jsx"
 
 
@@ -7,8 +7,10 @@ const ShowTableEvents = ()=>{
     const [events, setEvents] = useState([]);
 
     useEffect(()=>{
-        get_data().then((data)=>{
-            setEvents(data);
+        getDataSeverTwo().then((data)=>{
+            const lastEvetns = data.slice(-10);
+            lastEvetns.reverse();
+            setEvents(lastEvetns);
         }).catch((err)=>{
             console.log(err);
         })
@@ -16,7 +18,6 @@ const ShowTableEvents = ()=>{
 
     return (
         <>
-            <h1>Eventos</h1>
             <EventTable events={events}/>
         </>
     )

@@ -1,6 +1,7 @@
 import LcEvents from './components/mainLcharEvents/LcEvents'
 import PEvents from './components/PieEvents/PEvents'
 import './app.css';
+import ShowTableEvents from './components/EventsTable/showTableEvents';
 
 const App = () => {
     return (
@@ -19,17 +20,21 @@ const App = () => {
                 <PEvents />
             </div>
             <div className="data-card-description">
-            <h1>Proyecto de cerradura electronica con modulo ESP8266</h1>
-            <p>El proyecto es un desarrollo de un dispositivo IoT que es capaz de registrar los eventos que vayan surgiendo (abrir, cerrar).<br/>
-            Del curso de <span>Arquitecutura de computadoras II</span> impartido por <span> Ing. Cesar Lazaro Martinez.</span>.<br/>
-            Estos eventos son trasladados a la nube(servidor) y posteriormente <span>son procesados para verlos datos graficamente.</span></p>
-            <p>Los encargados y diseñadores de este proyecto IoT son los siguientes:</p>
+                <h1>Proyecto de cerradura electronica con modulo ESP8266</h1>
+                <p>El proyecto es un desarrollo de un dispositivo IoT que es capaz de registrar los eventos que vayan surgiendo (abrir, cerrar).<br />
+                    Del curso de <span>Arquitecutura de computadoras II</span> impartido por <span> Ing. Cesar Lazaro Martinez.</span>.<br />
+                    Estos eventos son trasladados a la nube(servidor) y posteriormente <span>son procesados para verlos datos graficamente.</span></p>
+                <p>Los encargados y diseñadores de este proyecto IoT son los siguientes:</p>
 
-            <h3>Edwar Alejandro Castellanos Portillo.</h3>
-            <h3>Josue Alberto Guevara Lopez.</h3>
-            <h3>Stiven Oswaldo Ramos Hernandez.</h3>
-            <h3>Jorge Alfonso Garcia Lopez.</h3>
+                <h3>Edwar Alejandro Castellanos Portillo.</h3>
+                <h3>Josue Alberto Guevara Lopez.</h3>
+                <h3>Stiven Oswaldo Ramos Hernandez.</h3>
+                <h3>Jorge Alfonso Garcia Lopez.</h3>
 
+            </div>
+            <div className="data-card-table">
+            <h1>Eventos</h1>
+                <ShowTableEvents />
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/styles.css'; // Importamos el archivo de estilos
+import '../../styles/styles.css'
 
 export const EventTable = ({ events }) => {
     return (
@@ -8,19 +8,19 @@ export const EventTable = ({ events }) => {
                 <table className='event-table'>
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Num</th>
                             <th>Event Date</th>
                             <th>Event Name</th>
-                            <th>Event Creator</th>
+                            <th>Time</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {events.map(event => (
+                        {events && events.map(event => (
                             <tr key={event.id}>
                                 <td>{event.id}</td>
-                                <td>{event.event_date}</td>
-                                <td>{event.event_name}</td>
-                                <td>{event.event_creator}</td>
+                                <td>{event.fechaCreacion.split('T')[0]}</td>
+                                <td>{event.evento1}</td>
+                                <td>{event.fechaCreacion.split('T')[1]}</td>
                             </tr>
                         ))}
                     </tbody>
